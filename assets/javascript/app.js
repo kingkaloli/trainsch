@@ -1,46 +1,35 @@
-$(function () {
+var config = {
+    apiKey: "AIzaSyBGUDlQUiPPCqaHZu6_Qr_zNOa09P84O3M",
+    authDomain: "trainapp-83721.firebaseapp.com",
+    databaseURL: "https://trainapp-83721.firebaseio.com",
+    projectId: "trainapp-83721",
+    storageBucket: "trainapp-83721.appspot.com",
+    messagingSenderId: "68137495036"
+  };
+  firebase.initializeApp(config);
+  var trainData = firebase.database();
 
-    var config = {
-        apiKey: "AIzaSyDbOePEDeZldaF-9l6vANvD76dh152xPX8",
-        authDomain: "kalolitonight.firebaseapp.com",
-        databaseURL: "https://kalolitonight.firebaseio.com",
-        projectId: "kalolitonight",
-        storageBucket: "kalolitonight.appspot.com",
-        messagingSenderId: "1030317983164"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-
-var name = "";
-var role = "";
-var startDate = 0;
-var monthlyRate = "";
-$("#submit-button").on("click", function (event) {
-    // Don't refresh the page!
-    event.preventDefault();
-
-    name = $("#name").val().trim();
-    role = $("#role").val().trim();
-    startDate = $("#start").val().trim();
-    monthlyRate = $("#month-rate").val().trim()
-    console.log(role);
-
-        database.ref().push({
-        name: name,
-        role: role,
-        startDate: startDate,
-        monthlyRate: monthlyRate
-    });
-
-});
-database.ref().on("child_added", function(childSnapshot) {
-    $("#testRow").append("<div><span class='member-name'>" +
-      childSnapshot.val().name);      
-      $("#testrole").append("<div><span class='member-name'>" +
-      childSnapshot.val().role);   
-      $("#testDate").append("<div><span class='member-name'>" +
-      childSnapshot.val().startDate); 
+    $("#addTrainBtn").on("click",function(){
+        var trainName = $("#trainNameInput").val().trim();
+        var destination= $("#destinationInput").val().trim();
+        var firstTrain= moment($("#firstTrainInput").val().trim(),"HH:mm").subtract(10,"years").format("x");
+        var frequency= $("#frequencyInput").val().trim();
       
-  });
-});
+         var newTrain = {
+         name: trainName,
+         destination: destination,
+         firstTrain: firstTrain,
+         frequency: frequency,
+         
+        }
+
+        trainData.ref().push(newTrain);
+
+        alert("Train Added!");
+        $("#trainNameInput").val("");
+        $("#destinationInput").val("");
+        $("#firstTrainInput").val("");
+        $("#frequencyInput").val("");
+        
+        return false;
+    })
