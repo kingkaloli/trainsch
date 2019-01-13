@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travel The World </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+</head>
+<body>
+<!--Jumbotron-->
+<div class="jumbotron">
+    <div class="container">
+        
+        <h1 class="display-4">Employee Data Management</h1>
+        <p class="lead">A Comprehensive Directory of Employee Billable Hours</p>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col=12">
+        <div class="card">
+            <div class="card-header tableCard">
+                <h3>Current Employees</h3>
+            </div>
+            <table class="table">
+               
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    
+                            </tr>
+                        </thead>
+                        <tr>
+                          <td scope="row" id="testRow"></td>
+                          <td scope="row" id="testrole"></td>
+                          <td scope="row" id="testDate"></td>
+                        </tr>
+                        <tbody id="table-body">
+                        
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header" id="form-card">
+                    <h3>Add Train</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Employee Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" class="form-control" id="role">
+                        </div>
+                        <div class="form-group">
+                            <label for="start">Start Date</label>
+                            <input type="text" class="form-control" id="start">
+                        </div>
+                        <div class="form-group">
+                            <label for="month-rate">Monthly Rate</label>
+                            <input type="text" class="form-control" id="month-rate">
+                        </div>
+                    </form>
+                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
