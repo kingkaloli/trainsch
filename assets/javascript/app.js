@@ -15,6 +15,24 @@ var config = {
         var firstTrain= moment($("#firstTrainInput").val().trim(),"HH:mm").subtract(10,"years").format("x");
         var frequency= $("#frequencyInput").val().trim();
       
+        if (trainName == "") {
+            alert("Enter a train name please.");
+            return false;
+        }
+        if (destination == "") {
+            alert("Enter a destination please.");
+            return false;
+        }
+        if (firstTrain == "") {
+            alert("Enter a train time please.");
+            return false;
+        }
+        if (frequency == "") {
+            alert("Enter a frequency");
+            return false;
+        }
+
+
          var newTrain = {
          name: trainName,
          destination: destination,
