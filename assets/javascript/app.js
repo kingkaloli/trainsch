@@ -19,8 +19,24 @@ var config = {
             alert("Enter a train name please.");
             return false;
         }
+       
         if (destination == "") {
             alert("Enter a destination please.");
+            return false;
+        }
+        if (destination == "Silverton") {
+            alert("This train is delayed, please visit this travel warning page");
+            window.location.href='warning.html';
+            return false;
+        }
+        if (destination == "Telluride") {
+            alert("This train is delayed, please visit this travel warning page");
+            window.location.href='warning.html';
+            return false;
+        }
+        if (destination == "Ouray") {
+            alert("This train is delayed, please visit this travel warning page");
+            window.location.href='warning.html';
             return false;
         }
         if (firstTrain == "") {
