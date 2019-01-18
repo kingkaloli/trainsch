@@ -1,0 +1,27 @@
+body {
+
+    background-image: url("white-waves.png");
+}
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+
+}
+
+p {
+
+    font-family: 'Staatliches', cursive;
+    font-weight: bold;
+}
+
+
+.jumbotron  {
+
+    background-color: #6994c5;
+    color:white;
+}
+h3  {
+    background-color: #6994c5;
+    color:white;
+}
